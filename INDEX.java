@@ -7,22 +7,32 @@ public class INDEX {
         Double x = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter the value of mass in KG"));
         Double y = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter the value of height in Meters"));
 
-        double BMI = x / (y * y);
+        double BMI = x / (y * y); // This Formular Calculates the Body Mass Index of a person by getting inputs
 
         JOptionPane.showMessageDialog(null, "YOUR BODY MASS INDEX (BMI) IS =  " + BMI);
 
-        if (BMI < 16)
-            JOptionPane.showMessageDialog(null, "you are seriously underweight get something to eat:");
-        else if (BMI < 18)
-            JOptionPane.showMessageDialog(null, "you are underweight try eating  more:");
-        else if (BMI < 24)
-            JOptionPane.showMessageDialog(null, "you are normal weight but continue eating well:");
-        else if (BMI < 29)
-            JOptionPane.showMessageDialog(null, "you are seriously overweight call Doctor Shimiyana:");
-        else if (BMI < 35)
-            JOptionPane.showMessageDialog(null, "you are seriously overwight and this is risk:");
+        if (x > 0 && y > 0) {
+            if (BMI < 18.5) {
+                JOptionPane.showMessageDialog(null, "You are within the Underweight range");
+
+            } // the first Range of the IBM
+
+            if (BMI > 18.5 && BMI <= 24.9) {
+                JOptionPane.showMessageDialog(null, "You are within the Healthy weight range:");
+            } // The second Range of the IBM
+
+            if (BMI > 25.0 && BMI <= 29.9) {
+                JOptionPane.showMessageDialog(null, "You are within the over weight range:");
+            } // The Third Range of the IBM
+
+            if (BMI > 30) {
+                JOptionPane.showMessageDialog(null, "You are Obsese kindly Seek Medical Attention:");
+            } // The fourth Range of the IBM
+
+        }
+
         else
-            JOptionPane.showMessageDialog(null, "you are over weight beyond Zambia Health Desk Regulation:");
+            JOptionPane.showMessageDialog(null, "Kindly input Positive values for the Weight and/or the Height:");
 
     }
 }
