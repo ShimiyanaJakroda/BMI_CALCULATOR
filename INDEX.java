@@ -9,16 +9,16 @@ public class INDEX {
 
         double BMI = x / (y * y); // This Formular Calculates the Body Mass Index of a person by getting inputs
 
-        JOptionPane.showMessageDialog(null, "YOUR BODY MASS INDEX (BMI) IS =  " + BMI);
-
         if (x > 0 && y > 0) {
+            JOptionPane.showMessageDialog(null, "YOUR BODY MASS INDEX (BMI) IS =  " + BMI);
             if (BMI < 18.5) {
                 JOptionPane.showMessageDialog(null, "You are within the Underweight range less than 18.5");
 
             } // the first Range of the IBM
 
             if (BMI > 18.5 && BMI <= 24.9) {
-                JOptionPane.showMessageDialog(null, "You are within the Healthy weight range withis within 18.5 t0 24.9:");
+                JOptionPane.showMessageDialog(null,
+                        "You are within the Healthy weight range withis within 18.5 t0 24.9:");
             } // The second Range of the IBM
 
             if (BMI > 25.0 && BMI <= 29.9) {
@@ -31,8 +31,12 @@ public class INDEX {
 
         }
 
-        else
-            JOptionPane.showMessageDialog(null, "Kindly input Positive values for the Weight and/or the Height:");
+        else {
+            // The output below only display when one/both values entered are negative
+            JOptionPane.showMessageDialog(null, "Your Height and weight should be positive", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+
+        }
 
     }
 }
